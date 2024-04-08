@@ -1,4 +1,4 @@
 ## Pubquizz Dashboard
 
-Pubquizz using Pythhon Dash
+Pubquizz using Python Dash
 

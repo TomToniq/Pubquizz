@@ -3,8 +3,8 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 import  datetime
 
-from Task  import *
-from Team import * 
+from Task import Task
+from Team import Team
 
 # Add some dummy Tasks & Solutions
 Tasks = [
@@ -21,7 +21,6 @@ Teams = [Team(Name, Token) for Name, Token in {
         "Green": "TREE"
     }.items()
 ]
-
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.SKETCHY])
 
@@ -138,7 +137,7 @@ def on_button_click(n, TaskID, Submission, Token):
                 return f'Joker was not set.'
 
         # Strip the Label. Get only the number.
-        TaskID = int(TaskID[8:])
+        TaskID = int(TaskID[5:])
 
         result = T.Submit(TaskID, int(Submission))   
         if result == 0:

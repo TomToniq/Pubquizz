@@ -1,4 +1,5 @@
 import weakref
+import Team
 
 class Task:
     Instance_Arr = []
@@ -6,7 +7,7 @@ class Task:
     # Tasks are worth 20 points initially.
     Initial_Value = 20
 
-    # First 3 Teams to solve a task Get the following bonus points.
+    # First 3 Teams to solve a task get the following bonus points.
     Bonus_Points = {
         0:15,
         1:10,
@@ -29,5 +30,5 @@ class Task:
 
 
     def get_current_value(self):
-        return Task.Initial_Value + Task.Bonus_Points[self.Number_of_Solutions]
+        return Task.Initial_Value + Task.Bonus_Points.get(self.Number_of_Solutions, 0)
     

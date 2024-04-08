@@ -1,4 +1,5 @@
 import weakref
+import Task
 
 class Team:
     Instance_Arr = []
